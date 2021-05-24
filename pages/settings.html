@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/bootstrap.min.css" />
+
+    <style>
+      @font-face {
+        font-family: "Itim";
+        src: url("../assets/fonts/Itim-Regular.ttf") format("truetype");
+      }
+      body {
+        width: 400px;
+        height: 300px;
+        background-image: linear-gradient(
+          to bottom,
+          #416e75,
+          #529290,
+          #6db7a6,
+          #94dbb5,
+          #c6ffc1
+        );
+        font-family: "Itim";
+      }
+      :root {
+        --backgroundColor: rgba(246, 241, 209);
+        --colorShadeA: rgb(88, 112, 85);
+        --colorShadeB: rgb(88, 112, 85);
+        --colorShadeC: rgb(187, 240, 182, 94);
+        --colorShadeD: rgb(197, 252, 192, 99);
+        --colorShadeE: rgb(198, 255, 193, 100);
+      }
+
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+      * {
+        box-sizing: border-box;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        font-size: 11px;
+        color: var(--colorShadeA);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: inherit;
+        width: 150px;
+      }
+
+      button.big-button {
+        padding: 1em 2em;
+        border: 2px solid var(--colorShadeA);
+        border-radius: 1em;
+        background: var(--colorShadeE);
+        transform-style: preserve-3d;
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+      }
+      button.big-button::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--colorShadeC);
+        border-radius: inherit;
+        box-shadow: 0 0 0 2px var(--colorShadeB),
+          0 0.75em 0 0 var(--colorShadeA);
+        transform: translate3d(0, 0.75em, -1em);
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+        -webkit-box-shadow: 0px 0px 15px 5px #000000;
+        box-shadow: 0px 0px 15px 5px #000000;
+      }
+
+      button.big-button:hover {
+        background: var(--colorShadeD);
+        transform: translate(0, 0.375em);
+      }
+
+      button.big-button:hover::before {
+        transform: translate3d(0, 0.75em, -1em);
+      }
+
+      button.big-button:active {
+        transform: translate(0em, 0.75em);
+      }
+
+      button.big-button:active::before {
+        transform: translate3d(0, 0, -1em);
+
+        box-shadow: 0 0 0 2px var(--colorShadeB),
+          0 0.25em 0 0 var(--colorShadeB);
+      }
+
+      .custom-control-input:checked ~ .custom-control-label::before {
+        color: #fff;
+        border-color: #7b1fa2;
+      }
+
+      .custom-control-input:checked ~ .custom-control-label.yellow::before {
+        background-color: #ffe268;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col">
+        <div class="row">
+          <div
+            class="col text-center"
+            style="
+              margin-top: 30px;
+              color: #ffe268;
+              text-shadow: 1.5px 1.5px #a87414;
+            "
+          >
+            <h4>AYARLAR</h4>
+          </div>
+        </div>
+        <div
+          class="row"
+          style="margin-top: 10px; margin-bottom: 10px; font-size: 16px"
+        >
+          <div class="col-5 align-self-center">Kullanıcı Adı:</div>
+          <div class="col-7">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Kullanıcı Adı"
+              id="kullaniciadi"
+            />
+          </div>
+        </div>
+        <div
+          class="row"
+          style="margin-top: 10px; margin-bottom: 10px; font-size: 16px"
+        >
+          <div class="col-5">Zorluk Seviyesi:</div>
+          <div class="col-7">
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                id="customRadioInline1"
+                name="customRadioInline1"
+                class="custom-control-input"
+                value="Kolay"
+                checked
+              />
+              <label
+                class="custom-control-label yellow"
+                for="customRadioInline1"
+                >Kolay</label
+              >
+            </div>
+            <br />
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                id="customRadioInline2"
+                name="customRadioInline1"
+                class="custom-control-input"
+                value="Orta"
+              />
+              <label
+                class="custom-control-label yellow"
+                for="customRadioInline2"
+                >Orta</label
+              >
+            </div>
+            <br />
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                id="customRadioInline3"
+                name="customRadioInline1"
+                class="custom-control-input"
+                value="Zor"
+              />
+              <label
+                class="custom-control-label yellow"
+                for="customRadioInline3"
+                >Zor</label
+              >
+            </div>
+            <br />
+            <div class="custom-control custom-radio custom-control-inline">
+              <input
+                type="radio"
+                id="customRadioInline4"
+                name="customRadioInline1"
+                class="custom-control-input"
+                value="Cengaver"
+              />
+              <label
+                class="custom-control-label yellow"
+                for="customRadioInline4"
+                >Cengaver</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+          <div class="col-5"></div>
+          <div class="col-7">
+            <!--<a href="#" class="btn">Oyuna Dön</a>-->
+            <button class="big-button" id="save" type="button">Kaydet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="settings.js"></script>
+  <script>
+    const remote = require("electron").remote;
+
+    var atananisim=getUsername();
+    document.getElementById("kullaniciadi").value=atananisim;
+    document.getElementById("save").addEventListener("click", function (e) {
+      var name=document.getElementById("kullaniciadi").value;
+      var radios = document.getElementsByName('customRadioInline1');
+      var secilen;
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+          secilen=radios[i].value;
+          break;
+        }
+      }
+      console.log(secilen)
+      updateSetting(name,secilen);
+      var window = remote.getCurrentWindow();
+      window.close();
+    });
+  </script>
+</html>

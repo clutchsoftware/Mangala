@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/button.sccs" />
+    <style>
+      @font-face {
+        font-family: "Itim";
+        src: url("../assets/fonts/Itim-Regular.ttf") format("truetype");
+      }
+      body {
+        width: 400px;
+        height: 250px;
+        background-color: #334443;
+
+        color: aliceblue;
+        font-family: "Itim";
+      }
+      :root {
+        --backgroundColor: rgba(246, 241, 209);
+        --colorShadeA: rgb(88, 112, 85);
+        --colorShadeB: rgb(88, 112, 85);
+        --colorShadeC: rgb(187, 240, 182, 94);
+        --colorShadeD: rgb(197, 252, 192, 99);
+        --colorShadeE: rgb(198, 255, 193, 100);
+      }
+
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+      * {
+        box-sizing: border-box;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      button {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        font-size: 11px;
+        color: var(--colorShadeA);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: inherit;
+        width: 150px;
+      }
+
+      button.big-button {
+        padding: 1em 2em;
+        border: 2px solid var(--colorShadeA);
+        border-radius: 1em;
+        background: var(--colorShadeE);
+        transform-style: preserve-3d;
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+      }
+      button.big-button::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--colorShadeC);
+        border-radius: inherit;
+        box-shadow: 0 0 0 2px var(--colorShadeB),
+          0 0.75em 0 0 var(--colorShadeA);
+        transform: translate3d(0, 0.75em, -1em);
+        transition: all 175ms cubic-bezier(0, 0, 1, 1);
+      }
+
+      button.big-button:hover {
+        background: var(--colorShadeD);
+        transform: translate(0, 0.375em);
+      }
+
+      button.big-button:hover::before {
+        transform: translate3d(0, 0.75em, -1em);
+      }
+
+      button.big-button:active {
+        transform: translate(0em, 0.75em);
+      }
+
+      button.big-button:active::before {
+        transform: translate3d(0, 0, -1em);
+
+        box-shadow: 0 0 0 2px var(--colorShadeB),
+          0 0.25em 0 0 var(--colorShadeB);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col">
+        <div class="row">
+          <div
+            class="col text-center"
+            style="
+              margin-top: 50px;
+              color: #ffe268;
+              text-shadow: 1.5px 1.5px #a87414;
+            "
+          >
+            <h4>ANASAYFAYA DÖN</h4>
+          </div>
+        </div>
+        <div
+          class="row"
+          style="margin-top: 10px; margin-bottom: 10px; font-size: 14px; display: flex; justify-content: center; align-items: center;"
+        >
+          <p style="text-align: center;">Anasayfaya döndüğünüzde oyun kaydedilmez.</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <a href="#">
+              <button class="big-button" id="anasayfayaDon">
+                Anasayfaya Dön
+              </button>
+            </a>
+          </div>
+          <div class="col">
+            <!--<a href="#" class="btn">Oyuna Dön</a>-->
+            <button class="big-button" onclick="window.close()">
+              Oyuna Dön
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="clientApp.js"></script>
+  <script>
+    //const remote = require("electron").remote;
+
+    document
+      .getElementById("anasayfayaDon")
+      .addEventListener("click", function (e) {
+        // ODADAN AYRIL
+        /*
+        const odadanAyrilBtn = document.getElementById("odadanAyrilBtn");
+        odadanAyrilBtn.onclick = () => {
+          let roomKey = odayaKatilInput.value;
+          game.emit("disconnection", roomKey);
+          let elemt = document.createElement("p");
+
+          game.on("disconnectionRoom", (key) => {
+            elemt.textContent = key + " odasından ayrıldın.";
+          });
+          odayaKatilContainer.appendChild(elemt);
+        };
+        */
+        console.log(window.opener.location.href);
+        var dosyaYolu = __dirname;
+        dosyaYolu = dosyaYolu.toString().substring(0, dosyaYolu.length - 5);
+        window.opener.location.href = "file://" + dosyaYolu + "/main.html";
+        //var window = remote.getCurrentWindow();
+
+        //window.close();
+        close();
+
+
+      });
+  </script>
+</html>

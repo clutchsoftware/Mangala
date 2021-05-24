@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mangala | CLUTCH</title>
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row" id="infoTitle">
+        <div class="col">
+          <div class="row">
+            <p id="mangalaTitle">MANGALA</p>
+          </div>
+          <div class="row" id="infoText">
+            <div class="col">
+              <p id="linksiz" style="font-size: 16px">
+                <b>Türk Zeka ve Strateji Oyunu</b>
+              </p>
+            </div>
+            <div class="col text-right">
+              <img
+                width="35"
+                height="35"
+                src="./assets/image/rulesYellow.png"
+                alt="rules"
+              />
+              <a
+                href="./pages/nasilOynanir.html"
+                class="link"
+                style="font-size: 16px"
+                ><b>Nasıl Oynanır?</b></a
+              >
+              <a href="#" class="link" style="font-size: 20px">|</a>
+              <img
+                width="35"
+                height="35"
+                src="./assets/image/settings.png"
+                alt="rules"
+              />
+              <a href="#" class="link" id="yeniPencere" style="font-size: 16px"
+                ><b>Ayarlar</b></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col" style="margin-right: 10px">
+          <a href="pages/robotGameArea.html" class="boxA">
+            <div class="row oyun" style="align-items: center">
+              <div class="col text-center">
+                <img
+                  width="100"
+                  height="80"
+                  src="./assets/image/robot.png"
+                  alt="robot"
+                />
+              </div>
+              <div class="col text-center">
+                <p class="oyunText">Robota Karşı Oyna</p>
+              </div>
+            </div>
+          </a>
+          <a href="pages/gameArea.html" class="boxA">
+            <div class="row oyun" style="align-items: center">
+              <div class="col text-center">
+                <img
+                  width="100"
+                  height="100"
+                  src="./assets/image/playFriendskirp.png"
+                  alt="playFriends"
+                />
+              </div>
+              <div class="col text-center">
+                <p class="oyunText">Arkadaşına Karşı Oyna</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col" style="margin-left: 10px">
+          <a href="pages/score.html" class="boxA">
+            <div class="row skor" style="align-items: center">
+              <div class="col text-center">
+                <img
+                  width="50"
+                  height="50"
+                  src="./assets/image/score.png"
+                  alt="playFriends"
+                />
+              </div>
+              <div class="col text-center">
+                <p class="oyunText">Skor</p>
+              </div>
+            </div>
+          </a>
+          <a href="./pages/clientGameArea.html" class="boxA">
+            <div class="row oyun" style="align-items: center">
+              <div class="col text-center">
+                <img
+                  width="80"
+                  height="80"
+                  src="./assets/image/onlineSoluk.png"
+                  alt="playFriends"
+                />
+              </div>
+              <div class="col text-center">
+                <p class="oyunText">Çevrim İçi Oyna</p>
+              </div>
+            </div>
+          </a>
+          <a href="pages/info.html" class="boxA">
+            <div class="row skor" style="align-items: center">
+              <div class="col text-center">
+                <img
+                  width="50"
+                  height="50"
+                  src="./assets/image/contact.png"
+                  alt="playFriends"
+                />
+              </div>
+              <div class="col text-center">
+                <p class="oyunText">Clutch</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron; // backend ile iletişim
+
+      let yeniPencere = document.querySelector("#yeniPencere");
+      yeniPencere.addEventListener("click", () => {
+        ipcRenderer.send("key:newWindow", true);
+      });
+
+      let sendBtn = document.querySelector("#sendBtn");
+      sendBtn.addEventListener("click", () => {
+        ipcRenderer.send("btnClick", "Oyna tuşuna basıldı!");
+      });
+
+      let btnSettings = document.querySelector("#btnSettings");
+      btnSettings.addEventListener("click", () => {
+        ipcRenderer.send("key:settingScreen");
+      });
+
+      let btnExit = document.querySelector("#btnExit");
+      btnExit.addEventListener("click", () => {
+        ipcRenderer.send(
+          "key:exitScreen",
+          "file://" + __dirname + "/pages/settings.html"
+        );
+      });
+    </script>
+  </body>
+</html>

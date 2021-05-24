@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: "Itim";
+      src: url('../assets/fonts/Itim-Regular.ttf') format("truetype");
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(to bottom, #416e75, #529290, #6db7a6, #94dbb5, #c6ffc1);
+      font-family: "Itim";
+      color: #334443
+    }
+
+
+    div.back::-webkit-scrollbar {
+      display: none;
+    }
+
+    div.front::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    div.back {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    div.front {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    div.back {
+      height: 525px;
+      width: 600px;
+      overflow: auto;
+      border-radius: 10%;
+      position: absolute;
+      background: linear-gradient(180deg, #FFDA89, #FF8B36);
+      box-shadow: inset -2px 0px 4px rgba(255, 255, 255, 0.3), inset 0 0 56px rgb(225, 133, 70, 0.3);
+      filter: drop-shadow(0px 52px 94px rgba(253, 115, 51, 0.349));
+    }
+
+    div.front {
+      height: 525px;
+      width: 600px;
+      overflow: auto;
+      border-radius: 10%;
+      background: linear-gradient(180deg, rgb(255, 230, 186, 0.3), rgba(255, 237, 222, 0.6));
+      position: relative;
+      backdrop-filter: blur(16px);
+      box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 0px 35px rgba(0, 0, 0, 0.08);
+
+    }
+
+    p {
+      font-size: 19px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h2 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .geributon {
+      margin-left: 15px;
+      margin-top: 10px;
+    }
+
+    .titleGeri {
+      margin-left: 20%;
+
+      text-align: center;
+    }
+
+    hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+  </style>
+</head>
+
+<body>
+  <div class="back"></div>
+  <div class="front">
+    
+    <div class="geributon" style="float:left;"><a href="../main.html"><img width="60" height="60"
+          src="../assets/image/geri.png" alt="geri"></a></div>
+    <div class="titleGeri" style="float:left;">
+      <h1>Oyun Skorları</h1>
+    </div>
+    <div style="clear:both;"></div>
+    <div id="skorList"></div>
+    
+  </div>
+  <script src="./settings.js"></script>
+  <script>
+      
+      
+      let score=getScoreList();
+      ul = document.createElement('ul');
+      document.getElementById('skorList').appendChild(ul);
+
+      score.forEach(function (item) {
+          let string="Skor : "+item.score+"--> Rakip : "+item.rakip;
+          let li = document.createElement('li');
+          ul.appendChild(li);
+
+          li.innerHTML += string;
+      });
+  </script>
+</body>
+
+</html>
+
+</html>

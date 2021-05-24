@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <input id="username" type="text" placeholder="user-name<inaktif>" />
+
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div
+        id="odaOlustur"
+        style="
+          height: 500px;
+          width: 300px;
+          border: solid 1px black;
+          margin: 20px;
+        "
+      >
+        <p>ODA OLUŞTUR</p>
+        <button id="odaOlusturBtn" type="submit">Olustur</button>
+        <br />
+        <input
+          id="mesajGonderOdaOlusturInput"
+          type="text"
+          placeholder="mesaj"
+        />
+        <button id="mesajGonderBtnOdaOlustur" type="submit">Gonder</button>
+        <hr />
+      </div>
+
+      <div
+        id="odayaKatil"
+        style="
+          height: 500px;
+          width: 300px;
+          border: solid 1px black;
+          margin: 20px;
+        "
+      >
+        <p>ODAYA KATIL</p>
+        <button id="odadanAyrilBtn" type="submit">Odadan Ayril</button>
+        <br />
+        <input id="odayaKatilInput" type="text" placeholder="key" />
+        <button id="odayaKatilBtn" type="submit">Odaya Katil</button>
+
+        <input
+          id="mesajGonderOdayaKatilInput"
+          type="text"
+          placeholder="mesaj"
+        />
+        <button id="mesajGonderBtnOdayaKatil" type="submit">Gonder</button>
+        <hr />
+      </div>
+
+      <div
+        id="oyuncuAra"
+        style="
+          height: 500px;
+          width: 300px;
+          border: solid 1px black;
+          margin: 20px;
+        "
+      >
+        <p>OYUNCU ARA</p>
+      </div>
+    </div>
+
+    <script src="./clientApp.js"></script>
+  </body>
+</html>

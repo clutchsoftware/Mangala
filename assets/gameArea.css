@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "Itim";
+  src: url("fonts/Itim-Regular.ttf") format("truetype");
+}
+
+.dot_black {
+  height: 20px;
+  width: 20px;
+  background-image: url("image/greenball.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: inline-block;
+}
+.dot_gray {
+  height: 20px;
+  width: 20px;
+  background-image: url("image/redball.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: inline-block;
+}
+.cirlce {
+  height: 101px;
+  width: 101px;
+  background-color: rgba(98, 54, 34, 0.685);
+  border-radius: 50%;
+  margin: 3.1px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.rectangle {
+  height: 305px;
+  width: 75px;
+  background-color: rgba(98, 54, 34, 0.685);
+  border-radius: 10px;
+}
+
+#overlayOda {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(51, 68, 67, 0.8);
+  z-index: 2;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(51, 68, 67, 0.8);
+  z-index: 2;
+  cursor: pointer;
+  color: aliceblue;
+}
+
+#overlayText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.kenar {
+  border: double 5px #ffe268;
+  border-color: #ffe268;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+  font-family: "Itim";
+}
+.disKenar {
+  font-family: "Itim";
+  
+  padding-bottom: 15px;
+}
+
+.odaCerceve {
+  height: 100%;
+  padding-top: 30%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.overlayTitle {
+  text-align: center;
+  font-size: 25px;
+  color: #ffe268;
+  text-shadow: 1.5px 1.5px #a87414;
+  margin-bottom: 10px;
+}
+body {
+  font-family: "Itim";
+  font-size: 1rem;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right bottom,
+    #334443,
+    #334443,
+    #334443,
+    #334443,
+    #334443
+  );
+  margin: 0;
+}
+
+#user1 {
+  height: 70px;
+
+  background-color: #ed664c;
+  border-bottom-left-radius: 40px;
+  margin: 0;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  margin-bottom: 20px;
+  color: #334443;
+  font-family: "Itim";
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+}
+#user2 {
+  height: 70px;
+
+  background-color: #ffe268;
+  border-top-right-radius: 40px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  margin: 0;
+  margin-top: 20px;
+  color: #334443;
+  font-family: "Itim";
+  font-size: 20px;
+  align-items: center;
+  display: flex;
+  float: left;
+}
+
+#tahta {
+  height: 362px;
+
+  margin: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+#tahtaCerceve {
+  width: 90%;
+  height: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1%;
+  padding-top: 0.75%;
+  background-color: #894c30;
+  -webkit-box-shadow: 0px 0px 23px 8px rgba(0, 0, 0, 0.85);
+  box-shadow: 0px 0px 23px 8px rgba(0, 0, 0, 0.85);
+}
+#tahtaGorunum {
+  width: 98%;
+  height: 98%;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: url("image/woodtexture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+
+.hazine1 {
+  width: 9%;
+  height: 90%;
+
+  margin-right: 1%;
+}
+
+.hazine2 {
+  width: 9%;
+  height: 90%;
+  margin-left: 1%;
+}
+.boncuklar {
+  width: 80%;
+  height: 90%;
+  align-items: center;
+}
+.boncuklar1 {
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+}
+.boncuklar2 {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+#geriButonuIcon {
+  width: 50px;
+  height: 50px;
+  background-image: url("image/geri.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.toast {
+  margin-top: 30px;
+  font-size: 15px;
+  color: #c6ffc1;
+  font-family: "Itim";
+}
+.oda {
+  margin-top: 55px;
+  color: #c6ffc1;
+  font-size: 20px;
+  font-family: "Itim";
+}
+#text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: "Itim";
+}
+
+:root {
+  --backgroundColor: rgba(246, 241, 209);
+  --colorShadeA: rgb(88, 112, 85);
+  --colorShadeB: rgb(88, 112, 85);
+  --colorShadeC: rgb(187, 240, 182, 94);
+  --colorShadeD: rgb(197, 252, 192, 99);
+  --colorShadeE: rgb(198, 255, 193, 100);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 11px;
+  color: var(--colorShadeA);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: inherit;
+  width: 130px;
+}
+
+button.big-button {
+  padding: 1em 2em;
+  border: 2px solid var(--colorShadeA);
+  border-radius: 1em;
+  background: var(--colorShadeE);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colorShadeC);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+button.big-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+  transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+  transform: translate3d(0, 0, -1em);
+
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+
+#toasts {
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.toast {
+  background-color: #c6ffc1;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+}
+
+.toast.info {
+  color: #334443;
+}

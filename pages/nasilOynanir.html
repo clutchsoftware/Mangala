@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: "Itim";
+      src: url('../assets/fonts/Itim-Regular.ttf') format("truetype");
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(to bottom, #416e75, #529290, #6db7a6, #94dbb5, #c6ffc1);
+      font-family: "Itim";
+      color: #334443
+    }
+
+
+    div.back::-webkit-scrollbar {
+      display: none;
+    }
+
+    div.front::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    div.back {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    div.front {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    div.back {
+      height: 525px;
+      width: 600px;
+      overflow: auto;
+      border-radius: 10%;
+      position: absolute;
+      background: linear-gradient(180deg, #FFDA89, #FF8B36);
+      box-shadow: inset -2px 0px 4px rgba(255, 255, 255, 0.3), inset 0 0 56px rgb(225, 133, 70, 0.3);
+      filter: drop-shadow(0px 52px 94px rgba(253, 115, 51, 0.349));
+    }
+
+    div.front {
+      height: 525px;
+      width: 600px;
+      overflow: auto;
+      border-radius: 10%;
+      background: linear-gradient(180deg, rgb(255, 230, 186, 0.3), rgba(255, 237, 222, 0.6));
+      position: relative;
+      backdrop-filter: blur(16px);
+      box-shadow: inset -1px 1px 1px rgba(255, 255, 255, 0.4), inset 0px 0px 35px rgba(0, 0, 0, 0.08);
+
+    }
+
+    p {
+      font-size: 19px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h2 {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .geributon {
+      margin-left: 15px;
+      margin-top: 10px;
+    }
+
+    .titleGeri {
+      margin-left: 20%;
+
+      text-align: center;
+    }
+
+    hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+hr.style-five:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+  </style>
+</head>
+
+<body>
+  <div class="back"></div>
+  <div class="front">
+    
+    <div class="geributon" style="float:left;"><a href="../main.html"><img width="60" height="60"
+          src="../assets/image/geri.png" alt="geri"></a></div>
+    <div class="titleGeri" style="float:left;">
+      <h1>Oyun Kuralları</h1>
+    </div>
+    <div style="clear:both;"></div>
+
+
+
+
+    <h2>1. Kural</h2>
+    <p>Başlama hakkı olan oyuncu kendi bölgesinde bulunan istediği kuyudan 4 adet taşı alır. Bir
+      adet taşı aldığı kuyuya bırakıp saatin tersi yönünde, yani sağa doğru her bir kuyuya birer adet taş bırakarak
+      elindeki taşlar bitene kadar dağıtır. Elindeki son taş hazinesine denk gelirse, oyuncu tekrar oynama hakkına sahip
+      olur. Oyuncunun kuyusunda tek taş varsa, sırası geldiğinde bu taşı sağındaki kuyuya taşıyabilir. Hamle sırası
+      rakibine geçer. Her seferinde oyuncunun elinde kalan son taş oyunun kaderini belirler.</p>
+    <hr style="border-top: 1px dashed #8c8b8b; margin-left: 25px; margin-right: 25px;">
+      <h2>2. Kural</h2>
+    <p>Hamle sırası gelen oyuncu kendi kuyusundan aldığı taşları dağıtırken elinde taş kaldıysa, rakibinin bölgesindeki
+      kuyulara da taş bırakmaya devam eder. Oyuncunun elindeki son taş, rakibinin bölgesinde denk geldiği kuyudaki
+      taşların <b><i>sayısını çift sayı yaparsa</i> </b>(2, 4, 6, 8 gibi) oyuncu bu kuyuda yer alan tüm taşların sahibi olur ve onları
+      kendi hazinesine koyar. Hamle sırası rakibine geçer.</p>
+      <hr style="border-top: 1px dashed #8c8b8b; margin-left: 25px; margin-right: 25px;">
+    <h2>3. Kural</h2>
+    <p>Oyuncu taşları dağıtırken elinde kalan son taş, yine kendi bölgesinde yer alan boş bir kuyuya denk gelirse ve
+      <b><i>eğer boş kuyusunun karşısındaki kuyuda da rakibine ait taş varsa, </i></b>hem rakibinin kuyusundaki taşları alır, hem de
+      kendi boş kuyusuna bıraktığı taşı alıp hazinesine koyar. Hamle sırası rakibine geçer.</p>
+      <hr style="border-top: 1px dashed #8c8b8b; margin-left: 25px; margin-right: 25px;">
+    <h2>4. Kural</h2>
+    <p>Oyunculardan herhangi birinin bölgesinde yer alan taşlar bittiğinde oyun seti biter. Oyunda kendi bölgesinde
+      taşları ilk biten oyuncu, rakibinin bölgesinde bulunan tüm taşları da kazanır. Dolayısıyla, oyunun dinamiği son
+      ana kadar hiç düşmez.
+    <p>
+      <hr class="style-five">
+      <div>
+        <h1>Oyun Ayarları</h1>
+      </div>
+      <h2>Kullanıcı Adı</h2>
+    <p>Oyun başlangıç ile beraber kullanıcıya varsayılan isimlerden birini atamaktadır. Ana sayfadan <i>"Ayarlar"</i> kısmına girerek
+      oyun boyunca kullanacağınız ismi belirleyebilirsiniz.
+    </p>
+      <hr style="border-top: 1px dashed #8c8b8b; margin-left: 25px; margin-right: 25px;">
+      <h2>Zorluk Seviyesi</h2>
+    <p><i>Bilgisayara karşı oyna</i> modu için geliştirilen Cengaver'in zorluk seviyesini belirlemenizi sağlar. Varsayılan olarak 
+      <i>orta zorluk modu</i> ayarlıdır.
+    <p>
+  </div>
+</body>
+
+</html>
+
+</html>

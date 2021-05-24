@@ -1,0 +1,231 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "OpenSans", sans-serif;
+}
+
+:root {
+    --backgroundColor: "#98ddca";
+    --colorShadeA: rgb(106, 163, 137);
+    --colorShadeB: rgb(121, 186, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 211);
+    --colorShadeE: rgb(205, 255, 232);
+    --shadow: #2e383a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "RobotoThin";
+    src: url('fonts/Roboto-Thin.ttf') format("truetype");
+    }
+@font-face {
+    font-family: "RobotoRegular";
+    src: url('fonts/AAhaWow-2O1K8.ttf') format("truetype");
+    }
+@font-face {
+    font-family: "Itim";
+    src: url('fonts/Itim-Regular.ttf') format("truetype");
+    }
+
+body {
+    font-family: "OpenSans", sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #416e75, #529290, #6db7a6, #94dbb5, #c6ffc1);
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+    margin: 30px;
+}
+
+button.big-button {
+    padding: 0.5em 1em;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+button.big-button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+    transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+}
+
+
+.row.oyun{
+    height: 150px;
+    width: 290px;
+    margin-bottom: 10px;
+    background-color: #34656d;
+    border-radius: 25px 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.row.skor{
+    height: 70px;
+    width: 290px;
+    margin-bottom: 10px;
+    background-color: #34656d;
+    border-radius: 25px 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+#infoTitle{
+    height: 150px;
+    width: 600px;
+    margin-bottom: 10px;
+    color: #334443;
+    background: rgba(125, 179, 192, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba(97, 201, 128, 0.18);
+
+}
+#mangalaTitle{
+    font-family: "RobotoRegular";
+    font-size: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    color: aliceblue;
+    text-shadow: 
+        6px 6px        var(--shadow), 
+        5.75px 5.75px  var(--shadow), 
+        5.5px 5.5px    var(--shadow), 
+        5.25px 5.25px  var(--shadow),
+        5px 5px        var(--shadow), 
+        4.75px 4.75px  var(--shadow), 
+        4.5px 4.5px    var(--shadow), 
+        4.25px 4.25px  var(--shadow),
+        4px 4px        var(--shadow),
+        3.75px 3.75px  var(--shadow),
+        3.5px 3.5px    var(--shadow),
+        3.25px 3.25px  var(--shadow),
+        3px 3px        var(--shadow),
+        2.75px 2.75px  var(--shadow),
+        2.5px 2.5px    var(--shadow),
+        2.25px 2.25px  var(--shadow),
+        2px 2px        var(--shadow),
+        1.75px 1.75px  var(--shadow),
+        1.5px 1.5px    var(--shadow),
+        1.25px 1.25px  var(--shadow),
+        1px 1px        var(--shadow),
+        0.75px 0.75px  var(--shadow),
+        0.5px 0.5px    var(--shadow),
+        0.25px 0.25px  var(--shadow);
+
+
+
+}
+#infoText{
+    font-family: "RobotoRegular";
+    font-size: 14px;
+    
+   
+
+}
+.link{
+    font-family: "Itim";
+    font-size: 14px;
+    margin-right: 5px;
+    color: aliceblue;
+    text-decoration: none;
+    
+
+
+}
+#linksiz{
+    font-family: "Itim";
+    font-size: 14px;
+    margin-top: 8px;
+    color: aliceblue;
+    text-decoration: none;
+
+
+}
+.link:hover{
+    font-family: "Itim";
+    font-size: 14px;
+    color: #deeceb;
+    text-shadow: 1px 1px #ee8a17;
+    text-decoration: none;
+    
+    
+}
+.oyunText{
+    font-family: "Itim";
+    font-size: 20px;
+    color: #c6ffc1;
+    text-decoration: none;
+    margin-top: 10px;
+    text-shadow: 2px 2px #2e383a;
+}
+.oyunText:hover{
+    font-family: "Itim";
+    font-size: 20px;
+    color: #c6ffc1;
+    margin-top: 10px;
+    text-shadow: 2px 2px #ee8a17;
+    text-decoration: none;
+}
+.boxA:hover{
+    text-decoration: none;
+}

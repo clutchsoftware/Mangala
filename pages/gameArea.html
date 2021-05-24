@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/gameArea.css" />
+    <link rel="stylesheet" href="../assets/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div id="overlay">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 250px;
+              width: 550px;
+              flex-direction: column;
+              background-image: linear-gradient(
+                to bottom,
+                #416e75,
+                #529290,
+                #6db7a6,
+                #94dbb5,
+                #c6ffc1
+              );
+              border-radius: 20px;
+            "
+          >
+            <div style="margin-bottom: 25px">
+              <p id="text" style="color: #ffe268"></p>
+            </div>
+            <div>
+              <button
+                class="big-button"
+                onclick="yenidenOyna()"
+                style="font-size: 11px; width: 150px"
+              >
+                Yeniden Oyna
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 0">
+        <div class="col-4">
+          <div class="geriButonu">
+            <a
+              href="turnBackMain.html"
+              onclick="window.open(this.href, 'Anasayfaya Dön',
+        'left=20,top=20,width=400,height=300,toolbar=no,location=no,scrollbars=no,status=no,fullscreen=no,resizable=no'); return false;"
+              ><img
+                width="60"
+                height="60"
+                src="../assets/image/geri.png"
+                alt="geri"
+                id="yeniPencere2"
+            /></a>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="bos"></div>
+        </div>
+        <div class="col-4 text-right" id="user1">
+          <div id="user2card">
+            <b id="user1Kullaniciadi">Oyuncu 1</b>
+            <img
+              src="../assets/image/clock.gif"
+              width="70"
+              height="70"
+              id="clock1"
+              style="visibility: hidden"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+
+      <div class="row" id="tahta">
+        <div class="col" style="align-items: center">
+          <div id="tahtaCerceve">
+            <div id="tahtaGorunum">
+              <div class="a">
+                <div class="hazine1" style="float: left">
+                  <div id="user1hole7" class="rectangle"></div>
+                </div>
+                <div class="boncuklar" style="float: left">
+                  <div class="boncuklar1">
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole6"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole5"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole4"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole3"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole2"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user1hole1"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="boncuklar2">
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole1"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole2"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole3"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole4"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole5"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag1"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag2"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag3"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag4"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div
+                      class="cirlce"
+                      onclick="tikla(this.id)"
+                      id="user2hole6"
+                    >
+                      <span
+                        class="dot_black"
+                        id="drag5"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag6"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag7"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                      <span
+                        class="dot_black"
+                        id="drag8"
+                        draggable="true"
+                        ondragstart="drag(event)"
+                      ></span>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+                <dic class="clear"></dic>
+                <div class="hazine2" style="float: left">
+                  <div id="user2hole7" class="rectangle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 0">
+        <div class="col-4 text-left" id="user2">
+          <div id="user2card">
+            <b id="user2Kullaniciadi">Oyuncu 2</b>
+            <img
+              src="../assets/image/clock.gif"
+              width="70"
+              height="70"
+              id="clock2"
+              style="visibility: visible"
+            />
+          </div>
+        </div>
+        <!-- toast js fonksiyonu eklenecek-->
+        <div class="col-4 text-center"></div>
+        <div class="col-4 text-right">
+          <div class="oda"></div>
+        </div>
+      </div>
+    </div>
+    <script src="settings.js"></script>
+    <script>
+      document.getElementById("user2Kullaniciadi").innerHTML =
+        user_name_list[0];
+      document.getElementById("user1Kullaniciadi").innerHTML =
+        user_name_list[1];
+    </script>
+  </body>
+</html>
+
+<script src="gameArea.js"></script>
